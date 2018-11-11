@@ -248,10 +248,10 @@ http://184.173.63.164:19888/jobhistory (for Job History Server) [might not work 
 <img src="img/dfs.png" width="800"></p>
 <p align="center">Figure 1. DFS Health</p>
 
-#### cluster
+#### cluster.html
 
 <p align="center">
-<img src="img/cluster.png" width="600"></p>
+<img src="img/yarn.png" width="800"></p>
 <p align="center">Figure 2. Cluster Control</p>
 
 ### Checking the java
@@ -266,7 +266,6 @@ Log files are located under `$HADOOP_HOME/logs`. You can check the java services
 29230 Jps
 28431 SecondaryNameNode
 ```
-
 
 # System Setup
 Install 
