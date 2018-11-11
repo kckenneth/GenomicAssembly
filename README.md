@@ -50,10 +50,23 @@ To easily ssh with the name instead of the IP addresses, we will setup the DNS. 
 ## Setup passwordless ssh
 The idea is to `ssh` without password between nodes. spark1 must be able to `ssh spark1`, `ssh spark2` and `ssh spark3`. You already know by now that to ssh using the name requires you to set up at /etc/hosts. Without password, it requires you to setup ssh-keygen generation. Follow the steps below in spark1 node. We then scopy all ssh private and public keys to other nodes. You'll need to enter the password when asked when copying. 
 
+Before you copy, make sure you test from spark1 to `ssh spark2`, etc. When ECDSA keys asks to connect, enter yes so that the ECDSA key will be updated in `known_hosts`. Once we have everything `id_rsa`, `id_rsa.pub`, `authorized_keys` and `known_hosts` in spark1 node, we will copy everything into all other nodes so that they can instantiate the communication without password. 
+
 ```
 # ssh-keygen -f ~/.ssh/id_rsa -b 2048 -t rsa 
 # cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys 
 # chmod 600 ~/.ssh/authorized_keys
+
+# ssh spark1 
+exit
+# ssh spark2
+exit
+# ssh spark3
+exit
+# ssh spark4
+exit
+# ssh spark5
+exit
 
 # scp ~/.ssh/* root@184.173.63.165:/root/.ssh/
 # scp ~/.ssh/* root@184.173.63.162:/root/.ssh/
@@ -63,3 +76,57 @@ The idea is to `ssh` without password between nodes. spark1 must be able to `ssh
 # for i in spark1 spark2 spark3 spark4 spark5; do ssh-copy-id $i; done
 ```
 ssh-copy-id will copy `id_rsa.pub` key to authorized_keys file (will be created) in other nodes. So when it tries to establish the connection, it will first ask the password of the node it's sshing into.
+
+#### Check if all 5 nodes can communicate without password from spark1 node
+
+```
+# vi test.sh
+```
+Copy the following script
+```
+#!/bin/bash
+
+# Edit node list
+nodes="spark1 spark2 spark3 spark4 spark5"
+
+# Test ssh configuration
+for i in $nodes
+do for j in $nodes
+ do echo -n "Testing ${i} to ${j}: "
+ ssh  ${i} "ssh ${j} date"
+ done
+done
+```
+Run the script
+```
+# chmod 755 test.sh
+# ./test.sh
+
+Testing spark1 to spark1: Sat Nov 10 20:51:19 CST 2018
+Testing spark1 to spark2: Sat Nov 10 20:51:19 CST 2018
+Testing spark1 to spark3: Sat Nov 10 20:51:20 CST 2018
+Testing spark1 to spark4: Sat Nov 10 20:51:21 CST 2018
+Testing spark1 to spark5: Sat Nov 10 20:51:22 CST 2018
+Testing spark2 to spark1: Sat Nov 10 20:51:22 CST 2018
+Testing spark2 to spark2: Sat Nov 10 20:51:23 CST 2018
+Testing spark2 to spark3: Sat Nov 10 20:51:24 CST 2018
+Testing spark2 to spark4: Sat Nov 10 20:51:25 CST 2018
+Testing spark2 to spark5: Sat Nov 10 20:51:26 CST 2018
+Testing spark3 to spark1: Sat Nov 10 20:51:26 CST 2018
+Testing spark3 to spark2: Sat Nov 10 20:51:27 CST 2018
+Testing spark3 to spark3: Sat Nov 10 20:51:28 CST 2018
+Testing spark3 to spark4: Sat Nov 10 20:51:29 CST 2018
+Testing spark3 to spark5: Sat Nov 10 20:51:30 CST 2018
+Testing spark4 to spark1: Sat Nov 10 20:51:30 CST 2018
+Testing spark4 to spark2: Sat Nov 10 20:51:31 CST 2018
+Testing spark4 to spark3: Sat Nov 10 20:51:31 CST 2018
+Testing spark4 to spark4: Sat Nov 10 20:51:33 CST 2018
+Testing spark4 to spark5: Sat Nov 10 20:51:33 CST 2018
+Testing spark5 to spark1: Sat Nov 10 20:51:34 CST 2018
+Testing spark5 to spark2: Sat Nov 10 20:51:34 CST 2018
+Testing spark5 to spark3: Sat Nov 10 20:51:35 CST 2018
+Testing spark5 to spark4: Sat Nov 10 20:51:36 CST 2018
+Testing spark5 to spark5: Sat Nov 10 20:51:37 CST 2018
+```
+
+
