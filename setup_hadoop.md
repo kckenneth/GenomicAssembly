@@ -285,4 +285,4 @@ assuming you are building this in /root
 ------------
 # Human Genome
 
-Downloading human genome and distributing into HDFS. <a href=></a>
+Downloading human genome and distributing into HDFS. <a href=>https://github.com/kckenneth/GenomicAssembly/blob/master/setup_HG38.md</a>
