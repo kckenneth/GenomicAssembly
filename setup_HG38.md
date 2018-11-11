@@ -94,7 +94,7 @@ drwxrwxrwx. 2 root root 4.0K Nov 11 14:54 .
 -rw-r--r--. 1 root root 2.1M Nov 11 14:54 1000G_phase1.snps.high_confidence.hg38.vcf.gz.tbi
 ```
 
-## Index the reference human genome (1 - 2 hours)
+## Index the reference human genome (2 hours)
 
 We need to index the human genome. Note that the command below will take 1-2 hours.  
 
