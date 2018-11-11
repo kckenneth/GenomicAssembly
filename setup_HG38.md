@@ -30,7 +30,7 @@ assuming you are building this in /root
 [INFO] ------------------------------------------------------------------------
 ```
 ------------
-## Download two files
+## Download two files and reference human genome hg38
 ```
 wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12750/sequence_read/ERR000589_1.filt.fastq.gz
 wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12750/sequence_read/ERR000589_2.filt.fastq.gz
@@ -55,9 +55,37 @@ user: gsapubftp-anonymous
 ```
 Once you're in ftp mode, enter these commands below to ensure non-interactive and binary modes. When you're in `ftp>` prompt, do the following. This will download the reference genome `dbsnp_144.hg38.vcf.gz` of size with `3.2GB`. This will take a few minutes. 
 ```
-prompt
-binary
-cd bundle
-cd hg38
-mget *
+> prompt
+> binary
+> cd bundle
+> cd hg38
+> mget *
+```
+
+## Index the reference human genome
+
+We need to index the human genome. Note that the command below will take 1-2 hours.  
+
+if on ubuntu
+```
+# apt-get install -y bwa
+```
+if on centos
+```
+# yum install -y epel-release
+# yum install -y bwa
+# bwa index Homo_sapiens_assembly38.fasta.gz
+```
+----------
+# Distribute all files to other nodes
+If you're not in other nodes, from the `spark1`, ssh into all other nodes, make a directory `/Data`. 
+```
+ssh spark2 mkdir -m 777 /Data
+ssh spark3 mkdir -m 777 /Data
+ssh spark4 mkdir -m 777 /Data
+ssh spark5 mkdir -m 777 /Data
+rsync -av /Data/HumanBase spark2:/Data/
+rsync -av /Data/HumanBase spark3:/Data/
+rsync -av /Data/HumanBase spark4:/Data/
+rsync -av /Data/HumanBase spark5:/Data/
 ```
