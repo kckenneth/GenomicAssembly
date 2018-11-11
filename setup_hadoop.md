@@ -283,28 +283,3 @@ assuming you are building this in /root
 [INFO] ------------------------------------------------------------------------
 ```
 
-### Checking the java
-
-Log files are located under `$HADOOP_HOME/logs`. You can check the java services running once your cluster is running using `jps`.
-```
-# jps
-
-28627 ResourceManager
-28134 NameNode
-28733 NodeManager
-29230 Jps
-28431 SecondaryNameNode
-```
-
-# System Setup
-Install 
-```
-# yum install -y rsync net-tools java-1.8.0-openjdk-devel ftp://fr2.rpmfind.net/linux/Mandriva/devel/cooker/x86_64/media/contrib/release/nmon-14g-1-mdv2012.0.x86_64.rpm
-```
-
-
-To allow permission on each directory. So far we have worked on `/data` and `/usr/local` directory. 
-```
-# chown -R hadoop.hadoop /data
-# chown -R hadoop.hadoop /usr/local/hadoop
-```
