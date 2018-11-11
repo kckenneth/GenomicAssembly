@@ -57,9 +57,12 @@ user: gsapubftp-anonymous
 ```
 We will download the following files from the Broad Institute ftp server. This will take an hour or so. 
 - dbsnp_144.hg38.vcf.gz = 3.2 GB
-- 1000G_omni2.5.hg38.vcf.gz = 51 MB
-- Homo_sapiens_assembly38.fasta.64.alt = 477 KB
+- 1000G_phase1.snps.high_confidence.hg38.vcf.gz = 1.9 GB
 - Homo_sapiens_assembly38.fasta.gz = 890 MB
+- 1000G_omni2.5.hg38.vcf.gz = 51 MB
+- hapmap_3.3_grch38_pop_stratified_af.vcf.gz.tbi = 1.5 MB
+- Homo_sapiens_assembly38.dict = 569 KB
+- Homo_sapiens_assembly38.fasta.64.alt = 477 KB
  
 Once you're in ftp mode, enter these commands below to ensure non-interactive and binary modes. When you're in `ftp>` prompt, do the following. 
 ```
