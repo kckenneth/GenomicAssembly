@@ -63,7 +63,7 @@ We will download the 23 files from the Broad Institute ftp server. This will tak
 > cd hg38
 > mget *
 ```
-Check if you have all the files in `/Data/HumanBase/
+Check if you have all the files in `/Data/HumanBase/`.
 ```
 # ls -altr -h
 
