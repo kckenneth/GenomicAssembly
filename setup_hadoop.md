@@ -180,14 +180,14 @@ To stop the HDFS node or yarn
 # stop-yarn.sh
 ```
 
-Check the HDFS status
+Check the HDFS status, for some reasons, only 4 nodes are up. 
 ```
 # hdfs dfsadmin -report
 
-Configured Capacity: 526449623040 (490.29 GB)
-Present Capacity: 486023487488 (452.64 GB)
-DFS Remaining: 486023364608 (452.64 GB)
-DFS Used: 122880 (120 KB)
+Configured Capacity: 421159698432 (392.24 GB)
+Present Capacity: 384640483328 (358.22 GB)
+DFS Remaining: 384640352256 (358.22 GB)
+DFS Used: 131072 (128 KB)
 DFS Used%: 0.00%
 Under replicated blocks: 0
 Blocks with corrupt replicas: 0
@@ -196,25 +196,25 @@ Missing blocks (with replication factor 1): 0
 Pending deletion blocks: 0
 
 -------------------------------------------------
-Live datanodes (5):
+Live datanodes (4):
 
-Name: 184.173.63.162:50010 (spark3.mids.com)
+Name: 10.77.147.229:50010 (spark3.mids.com)
 Hostname: spark3.mids.com
 Decommission Status : Normal
 Configured Capacity: 105289924608 (98.06 GB)
-DFS Used: 24576 (24 KB)
-Non DFS Used: 2729730048 (2.54 GB)
-DFS Remaining: 97204936704 (90.53 GB)
+DFS Used: 32768 (32 KB)
+Non DFS Used: 2838622208 (2.64 GB)
+DFS Remaining: 97096036352 (90.43 GB)
 DFS Used%: 0.00%
-DFS Remaining%: 92.32%
+DFS Remaining%: 92.22%
 Configured Cache Capacity: 0 (0 B)
 Cache Used: 0 (0 B)
 Cache Remaining: 0 (0 B)
 Cache Used%: 100.00%
 Cache Remaining%: 0.00%
 Xceivers: 1
-Last contact: Sat Nov 10 22:30:15 CST 2018
-Last Block Report: Sat Nov 10 22:29:42 CST 2018
+Last contact: Sun Nov 11 10:56:55 CST 2018
+Last Block Report: Sun Nov 11 10:43:59 CST 2018
 
 ...
 ...
@@ -282,4 +282,7 @@ assuming you are building this in /root
 [INFO] Final Memory: 32M/241M
 [INFO] ------------------------------------------------------------------------
 ```
+------------
+# Human Genome
 
+Downloading human genome and distributing into HDFS. <a href=></a>
