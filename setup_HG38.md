@@ -53,7 +53,7 @@ cd /Data/HumanBase
 ftp ftp.broadinstitute.org
 user: gsapubftp-anonymous
 ```
-Once you're in ftp mode, enter these commands below to ensure non-interactive and binary modes. When you're in `ftp>` prompt, do the following. 
+Once you're in ftp mode, enter these commands below to ensure non-interactive and binary modes. When you're in `ftp>` prompt, do the following. This will download the reference genome `3.2GB`. This will take a few minutes. 
 ```
 prompt
 binary
