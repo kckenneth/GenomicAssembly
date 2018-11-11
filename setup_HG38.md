@@ -42,7 +42,7 @@ hdfs dfs -copyFromLocal ERR000589_1.filt.fastq /ERR000589_1.filt.fastq
 hdfs dfs -copyFromLocal ERR000589_2.filt.fastq /ERR000589_2.filt.fastq
 ```
 
-## Download a reference human genome hg38 (1 hour)
+## Download a reference human genome hg38 (2 hours)
 You need to install `ftp` to connect to remote ftp server. 
 ```
 # yum install ftp
@@ -55,22 +55,43 @@ cd /Data/HumanBase
 ftp ftp.broadinstitute.org
 user: gsapubftp-anonymous
 ```
-We will download the following files from the Broad Institute ftp server. This will take an hour or so. 
-- dbsnp_144.hg38.vcf.gz = 3.2 GB
-- 1000G_phase1.snps.high_confidence.hg38.vcf.gz = 1.9 GB
-- Homo_sapiens_assembly38.fasta.gz = 890 MB
-- 1000G_omni2.5.hg38.vcf.gz = 51 MB
-- hapmap_3.3_grch38_pop_stratified_af.vcf.gz.tbi = 1.5 MB
-- Homo_sapiens_assembly38.dict = 569 KB
-- Homo_sapiens_assembly38.fasta.64.alt = 477 KB
- 
-Once you're in ftp mode, enter these commands below to ensure non-interactive and binary modes. When you're in `ftp>` prompt, do the following. 
+We will download the 23 files from the Broad Institute ftp server. This will take more than an hour. Once you're in ftp mode, enter these commands below to ensure non-interactive and binary modes. When you're in `ftp>` prompt, do the following. 
 ```
 > prompt
 > binary
 > cd bundle
 > cd hg38
 > mget *
+```
+Check if you have all the files in `/Data/HumanBase/
+```
+# ls -altr -h
+
+drwxr-xr-x. 3 root root 4.0K Nov 11 12:49 ..
+-rw-r--r--. 1 root root 3.0G Nov 11 13:30 dbsnp_144.hg38.vcf.gz
+-rw-r--r--. 1 root root  51M Nov 11 13:30 1000G_omni2.5.hg38.vcf.gz
+-rw-r--r--. 1 root root 477K Nov 11 13:30 Homo_sapiens_assembly38.fasta.64.alt
+-rw-r--r--. 1 root root 849M Nov 11 13:41 Homo_sapiens_assembly38.fasta.gz
+-rw-r--r--. 1 root root 1.5M Nov 11 13:41 hapmap_3.3_grch38_pop_stratified_af.vcf.gz.tbi
+-rw-r--r--. 1 root root 569K Nov 11 13:41 Homo_sapiens_assembly38.dict
+-rw-r--r--. 1 root root 1.8G Nov 11 14:03 1000G_phase1.snps.high_confidence.hg38.vcf.gz
+-rw-r--r--. 1 root root 1.5G Nov 11 14:20 dbsnp_138.hg38.vcf.gz
+-rw-r--r--. 1 root root 1.5M Nov 11 14:21 hapmap_3.3.hg38.vcf.gz.tbi
+-rw-r--r--. 1 root root 412K Nov 11 14:21 Axiom_Exome_Plus.genotypes.all_populations.poly.hg38.vcf.gz.tbi
+-rw-r--r--. 1 root root 1.5M Nov 11 14:21 1000G_omni2.5.hg38.vcf.gz.tbi
+-rw-r--r--. 1 root root 2.4M Nov 11 14:21 dbsnp_146.hg38.vcf.gz.tbi
+-rw-r--r--. 1 root root 3.2G Nov 11 14:52 dbsnp_146.hg38.vcf.gz
+-rw-r--r--. 1 root root  20M Nov 11 14:52 Mills_and_1000G_gold_standard.indels.hg38.vcf.gz
+-rw-r--r--. 1 root root  60M Nov 11 14:52 hapmap_3.3.hg38.vcf.gz
+-rw-r--r--. 1 root root 1.5M Nov 11 14:52 Mills_and_1000G_gold_standard.indels.hg38.vcf.gz.tbi
+-rw-r--r--. 1 root root 158K Nov 11 14:52 Homo_sapiens_assembly38.fasta.fai
+-rw-r--r--. 1 root root 2.3M Nov 11 14:52 dbsnp_138.hg38.vcf.gz.tbi
+-rw-r--r--. 1 root root 172M Nov 11 14:54 hapmap_3.3_grch38_pop_stratified_af.vcf.gz
+-rw-r--r--. 1 root root 586K Nov 11 14:54 wgs_calling_regions.hg38.interval_list
+-rw-r--r--. 1 root root 2.4M Nov 11 14:54 dbsnp_144.hg38.vcf.gz.tbi
+-rw-r--r--. 1 root root 3.0M Nov 11 14:54 Axiom_Exome_Plus.genotypes.all_populations.poly.hg38.vcf.gz
+drwxrwxrwx. 2 root root 4.0K Nov 11 14:54 .
+-rw-r--r--. 1 root root 2.1M Nov 11 14:54 1000G_phase1.snps.high_confidence.hg38.vcf.gz.tbi
 ```
 
 ## Index the reference human genome (1 - 2 hours)
