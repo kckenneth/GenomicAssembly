@@ -180,15 +180,15 @@ To stop the HDFS node or yarn
 # stop-yarn.sh
 ```
 
-Check the HDFS status, for some reasons, only 4 nodes are up. 
+Check the HDFS status, if you have only a few nodes up, check the failed node `/etc/hosts` if the DNS are correct. 
 ```
 # hdfs dfsadmin -report
 
-Configured Capacity: 421159698432 (392.24 GB)
-Present Capacity: 384640483328 (358.22 GB)
-DFS Remaining: 384640352256 (358.22 GB)
-DFS Used: 131072 (128 KB)
-DFS Used%: 0.00%
+Configured Capacity: 526449623040 (490.29 GB)
+Present Capacity: 481735657834 (448.65 GB)
+DFS Remaining: 481279193088 (448.23 GB)
+DFS Used: 456464746 (435.32 MB)
+DFS Used%: 0.09%
 Under replicated blocks: 0
 Blocks with corrupt replicas: 0
 Missing blocks: 0
@@ -196,15 +196,15 @@ Missing blocks (with replication factor 1): 0
 Pending deletion blocks: 0
 
 -------------------------------------------------
-Live datanodes (4):
+Live datanodes (5):
 
-Name: 10.77.147.229:50010 (spark3.mids.com)
-Hostname: spark3.mids.com
+Name: 10.77.147.210:50010 (spark2.mids.com)
+Hostname: spark2.mids.com
 Decommission Status : Normal
 Configured Capacity: 105289924608 (98.06 GB)
 DFS Used: 32768 (32 KB)
-Non DFS Used: 2838622208 (2.64 GB)
-DFS Remaining: 97096036352 (90.43 GB)
+Non DFS Used: 2839154688 (2.64 GB)
+DFS Remaining: 97095503872 (90.43 GB)
 DFS Used%: 0.00%
 DFS Remaining%: 92.22%
 Configured Cache Capacity: 0 (0 B)
@@ -213,8 +213,8 @@ Cache Remaining: 0 (0 B)
 Cache Used%: 100.00%
 Cache Remaining%: 0.00%
 Xceivers: 1
-Last contact: Sun Nov 11 10:56:55 CST 2018
-Last Block Report: Sun Nov 11 10:43:59 CST 2018
+Last contact: Sun Nov 11 11:15:06 CST 2018
+Last Block Report: Sun Nov 11 11:13:15 CST 2018
 
 ...
 ...
@@ -255,34 +255,7 @@ http://184.173.63.164:19888/jobhistory (for Job History Server) [might not work 
 <p align="center">Figure 2. Cluster Control</p> 
 
 ---------------
-# Install Spark BWA: Burrows-Wheeler Aligner
-# (On master node, spark1)
-For detailed instruction for <a href=https://github.com/citiususc/SparkBWA>Spark BWA</a>  
 
-if on Ubuntu:
-```
-# apt-get -y install gcc make git zlib-devel maven 
-```
-if on Centos:
-```
-# yum install -y gcc make git zlib-devel maven 
-```
-assuming you are building this in /root
-```
-# cd /root
-# git clone https://github.com/citiususc/SparkBWA.git
-# cd SparkBWA
-# mvn package
-
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 2:17.446s
-[INFO] Finished at: Sun Nov 11 09:47:14 CST 2018
-[INFO] Final Memory: 32M/241M
-[INFO] ------------------------------------------------------------------------
-```
-------------
 # Human Genome
 
 Downloading human genome and distributing into HDFS. <a href=>https://github.com/kckenneth/GenomicAssembly/blob/master/setup_HG38.md</a>
