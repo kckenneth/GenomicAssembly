@@ -39,55 +39,8 @@ Disk /dev/xvda: 107.4 GB, 107374182400 bytes, 209715200 sectors
 ```
 # mkdir -m 777 /data
 ```
-Making the file allocation (inode)
-```
-# mkdir /data
-# mkfs.ext4 /dev/xvdc
 
-mke2fs 1.42.9 (28-Dec-2013)
-Filesystem label=
-OS type: Linux
-Block size=4096 (log=2)
-Fragment size=4096 (log=2)
-Stride=0 blocks, Stripe width=0 blocks
-6553600 inodes, 26214400 blocks
-1310720 blocks (5.00%) reserved for the super user
-First data block=0
-Maximum filesystem blocks=2174746624
-800 block groups
-32768 blocks per group, 32768 fragments per group
-8192 inodes per group
-Superblock backups stored on blocks: 
-	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
-	4096000, 7962624, 11239424, 20480000, 23887872
 
-Allocating group tables: done                            
-Writing inode tables: done                            
-Creating journal (32768 blocks): done
-Writing superblocks and filesystem accounting information: done   
-```
-
-#### Defining the disk path
-
-```
-# vi /etc/fstab
-
-/dev/xvdc /data             ext4  defaults,noatime        0  0
-```
-
-It will look like this
-```
-UUID=afb76a75-314e-4fb8-9cca-79c61c4a10d8 /                       ext3    defaults,noatime,noatime        1 1
-UUID=deb85407-6f2a-475d-9018-9dfeeeb8f3fd /boot                   ext3    defaults,noatime,noatime        1 2
-LABEL=SWAP-xvdb1 swap swap    defaults        0 0
-
-/dev/xvdc /data             ext4  defaults,noatime        0  0
-```
-#### Mount the disk 
-```
-# mount /data
-# chmod 1777 /data
-```
 
 # System Setup
 Install 
@@ -110,46 +63,6 @@ To allow permission on each directory. So far we have worked on `/data` and `/us
 ```
 # chown -R hadoop.hadoop /data
 # chown -R hadoop.hadoop /usr/local/hadoop
-```
-
-### Export Path
-You now need to define the hadoop path in `~/.bash_profile`. For java path, since we want to export the working path from the system, it's different from other paths export method. You could either do `|grep` line or just copy and paste the path I already retrieved. You can just `cat` all other paths or copy and paste in `~/.bash_profile` from the 2nd export method. 
-
-##### 1. Export Method
-```
-# echo "export JAVA_HOME=\"$(readlink -f $(which javac) | grep -oP '.*(?=/bin)')\"" >> ~/.bash_profile
-# cat <<\EOF >> ~/.bash_profile
-export HADOOP_HOME=/usr/local/hadoop
-export HADOOP_MAPRED_HOME=$HADOOP_HOME
-export HADOOP_HDFS_HOME=$HADOOP_HOME
-export YARN_HOME=$HADOOP_HOME
-export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
-EOF
-```
-
-##### 2. Export Method
-```
-# vi ~/.bash_profile
-
-export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64"
-export HADOOP_HOME=/usr/local/hadoop
-export HADOOP_MAPRED_HOME=$HADOOP_HOME
-export HADOOP_HDFS_HOME=$HADOOP_HOME
-export YARN_HOME=$HADOOP_HOME
-export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
-```
-
-Activate the bash_profile
-```
-# source ~/.bash_profile
-```
-Check the java version
-```
-# $JAVA_HOME/bin/java -version
-
-openjdk version "1.8.0_181"
-OpenJDK Runtime Environment (build 1.8.0_181-b13)
-OpenJDK 64-Bit Server VM (build 25.181-b13, mixed mode)
 ```
 
 ## Hadoop Configuration Setup (on master node first)
