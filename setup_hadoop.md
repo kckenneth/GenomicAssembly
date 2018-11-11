@@ -55,7 +55,7 @@ There are 4 xml files we will be updating.
 
 After all those configurations setup, we will copy them into other 2 hdfs nodes. 
 
-#### 1. core-site.xml
+### 1. core-site.xml
 ```
 # vi core-site.xml
 
@@ -68,8 +68,7 @@ After all those configurations setup, we will copy them into other 2 hdfs nodes.
   </configuration>
 ```
 
-#### 2. yarn-site.xml
-All 
+### 2. yarn-site.xml
 ```
 # vi yarn-site.xml
 
@@ -110,7 +109,7 @@ All
   </configuration>
 ```
 
-#### 3. mapred-site.xml.template
+### 3. mapred-site.xml.template
 
 ```
 # vi mapred-site.xml.template
@@ -128,7 +127,7 @@ Change the name to `mapred-site.xml`
 # mv mapred-site.xml.template mapred-site.xml
 ```
 
-#### 4. hdfs-site.xml
+### 4. hdfs-site.xml
 ```
 vi hdfs-site.xml
 
@@ -151,18 +150,22 @@ vi hdfs-site.xml
   </configuration>
 ```
 
-##### Copy all configuration files to other hdfs nodes
+#### Distribute all configuration files to other nodes
 ```
-# rsync -a /usr/local/hadoop/etc/hadoop/* hadoop@slave1:/usr/local/hadoop/etc/hadoop/
-# rsync -a /usr/local/hadoop/etc/hadoop/* hadoop@slave2:/usr/local/hadoop/etc/hadoop/
+# rsync -a /usr/local/hadoop/etc/hadoop/* spark2:/usr/local/hadoop/etc/hadoop/
+# rsync -a /usr/local/hadoop/etc/hadoop/* spark3:/usr/local/hadoop/etc/hadoop/
+# rsync -a /usr/local/hadoop/etc/hadoop/* spark4:/usr/local/hadoop/etc/hadoop/
+# rsync -a /usr/local/hadoop/etc/hadoop/* spark5:/usr/local/hadoop/etc/hadoop/
 ```
 Change the nodes information in `slaves` file. Remove anything in there. 
 ```
 # vi slaves
 
-master
-slave1
-slave2
+spark1
+spark2
+spark3
+spark4
+spark5
 ```
 
 # Create HDFS FileSystem (on master node)
@@ -184,38 +187,42 @@ Check the HDFS status
 ```
 # hdfs dfsadmin -report
 
-18/10/07 20:32:27 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-Configured Capacity: 316664487936 (294.92 GB)
-Present Capacity: 300318064640 (279.69 GB)
-DFS Remaining: 300317990912 (279.69 GB)
-DFS Used: 73728 (72 KB)
+Configured Capacity: 526449623040 (490.29 GB)
+Present Capacity: 486023487488 (452.64 GB)
+DFS Remaining: 486023364608 (452.64 GB)
+DFS Used: 122880 (120 KB)
 DFS Used%: 0.00%
 Under replicated blocks: 0
 Blocks with corrupt replicas: 0
 Missing blocks: 0
 Missing blocks (with replication factor 1): 0
+Pending deletion blocks: 0
 
 -------------------------------------------------
-Live datanodes (3):
+Live datanodes (5):
 
-Name: 198.23.82.40:50010 (slave1.hadoop.mids.lulz.bz)
-Hostname: ec2-54-208-77-124.compute-1.amazonaws.com
+Name: 184.173.63.162:50010 (spark3.mids.com)
+Hostname: spark3.mids.com
 Decommission Status : Normal
-Configured Capacity: 105554829312 (98.31 GB)
+Configured Capacity: 105289924608 (98.06 GB)
 DFS Used: 24576 (24 KB)
-Non DFS Used: 62959616 (60.04 MB)
-DFS Remaining: 100106358784 (93.23 GB)
+Non DFS Used: 2729730048 (2.54 GB)
+DFS Remaining: 97204936704 (90.53 GB)
 DFS Used%: 0.00%
-DFS Remaining%: 94.84%
+DFS Remaining%: 92.32%
 Configured Cache Capacity: 0 (0 B)
 Cache Used: 0 (0 B)
 Cache Remaining: 0 (0 B)
 Cache Used%: 100.00%
 Cache Remaining%: 0.00%
 Xceivers: 1
-Last contact: Sun Oct 07 20:32:26 CDT 2018
-....
-....
+Last contact: Sat Nov 10 22:30:15 CST 2018
+Last Block Report: Sat Nov 10 22:29:42 CST 2018
+
+...
+...
+...
+...
 ```
 Check the YARN status
 ```
@@ -232,11 +239,11 @@ ec2-54-208-77-124.compute-1.amazonaws.com:44917	        RUNNING	ec2-54-208-77-12
 # Checking the cluster
 Go to your browser
 To check your cluster, browse to:  
-master IP = `198.23.88.164`. Don't change the port. 
+master IP = `184.173.63.164`. Don't change the port. 
 ```
-http://master-ip:50070/dfshealth.html
-http://master-ip:8088/cluster
-http://master-ip:19888/jobhistory (for Job History Server) [might not work unless you have job running]
+http://184.173.63.164:50070/dfshealth.html
+http://184.173.63.164:8088/cluster
+http://184.173.63.164:19888/jobhistory (for Job History Server) [might not work unless you have job running]
 ```
 #### dfshealth.html
 
