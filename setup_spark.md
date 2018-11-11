@@ -175,4 +175,4 @@ spark5
 
 # Setup Hadoop
 
-<a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_hadoop.md>Here</a>
+Next step, we will set up hadoop in all nodes. Go <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_hadoop.md>Here</a>
