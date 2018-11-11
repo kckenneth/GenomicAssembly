@@ -48,16 +48,18 @@ To easily ssh with the name instead of the IP addresses, we will setup the DNS. 
 ```
 
 ## Setup passwordless ssh
-The idea is to `ssh` without password between nodes. spark1 must be able to `ssh spark1`, `ssh spark2` and `ssh spark3`. You already know by now that to ssh using the name requires you to set up at /etc/hosts. Without password, it requires you to setup ssh-keygen generation.
+The idea is to `ssh` without password between nodes. spark1 must be able to `ssh spark1`, `ssh spark2` and `ssh spark3`. You already know by now that to ssh using the name requires you to set up at /etc/hosts. Without password, it requires you to setup ssh-keygen generation. Follow the steps below in spark1 node. We then scopy all ssh private and public keys to other nodes. You'll need to enter the password when asked when copying. 
 
 ```
 # ssh-keygen -f ~/.ssh/id_rsa -b 2048 -t rsa 
 # cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys 
 # chmod 600 ~/.ssh/authorized_keys
 
-# scp ~/.ssh/* root@50.97.252.103:/root/.ssh/
-# scp ~/.ssh/* root@50.97.252.102:/root/.ssh/
+# scp ~/.ssh/* root@184.173.63.165:/root/.ssh/
+# scp ~/.ssh/* root@184.173.63.162:/root/.ssh/
+# scp ~/.ssh/* root@184.173.63.166:/root/.ssh/
+# scp ~/.ssh/* root@50.23.42.89:/root/.ssh/
 
-# for i in spark1 spark2 spark3; do ssh-copy-id $i; done
+# for i in spark1 spark2 spark3 spark4 spark5; do ssh-copy-id $i; done
 ```
-ssh-copy-id will copy id_rsa.pub key to authorized_keys file (will be created) in other nodes. So when it tries to establish the connection, it will first ask the password of the node it's sshing into.
+ssh-copy-id will copy `id_rsa.pub` key to authorized_keys file (will be created) in other nodes. So when it tries to establish the connection, it will first ask the password of the node it's sshing into.
