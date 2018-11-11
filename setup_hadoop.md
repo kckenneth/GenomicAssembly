@@ -1,5 +1,7 @@
 # HDFS Setup (All nodes)
 
+<a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_spark.md><<Previous Spark setup</a>  
+
 If you come across any issues in setting up hdfs and yarn, go <a href=http://www.cs.brandeis.edu//~cs147a/lab/hadoop-troubleshooting/>Here</a>. Until then, Let's get started!
 
 ## 1. Download and install hadoop `2.9.1` version.
