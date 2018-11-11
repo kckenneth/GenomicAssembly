@@ -69,6 +69,7 @@ After all those configurations setup, we will copy them into other 2 hdfs nodes.
 ```
 
 ### 2. yarn-site.xml
+bind-host must be `0.0.0.0`. Using the private or public IP, I cannot connect to yarn resource manager at port `8088`.
 ```
 # vi yarn-site.xml
 
@@ -84,23 +85,19 @@ After all those configurations setup, we will copy them into other 2 hdfs nodes.
     </property>
     <property>
        <name>yarn.resourcemanager.bind-host</name>
-       <value>10.77.147.231</value>
+       <value>0.0.0.0</value>
       </property>
      <property>
         <name>yarn.nodemanager.resource.cpu-vcores</name>
         <value>4</value>
     </property>
     <property>
-        <name>yarn.nodemanager.resource.memory-mb</name>
-        <value>4096</value>
+      <name>yarn.nodemanager.resource.memory-mb</name>
+      <value>32768</value>
     </property>
     <property>
       <name>yarn.scheduler.maximum-allocation-mb</name>
       <value>20000</value>
-    </property>
-    <property>
-      <name>yarn.nodemanager.resource.memory-mb</name>
-      <value>32768</value>
     </property>
     <property> 
       <name>yarn.scheduler.minimum-allocation-mb</name> 
@@ -228,13 +225,13 @@ Check the YARN status
 ```
 # yarn node -list
 
-18/10/12 05:53:31 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-18/10/12 05:53:32 INFO client.RMProxy: Connecting to ResourceManager at master/50.23.91.123:8032
-Total Nodes:3
+Total Nodes:5
          Node-Id	     Node-State	Node-Http-Address	Number-of-Running-Containers
-ec2-35-169-58-188.compute-1.amazonaws.com:40476	        RUNNING	ec2-35-169-58-188.compute-1.amazonaws.com:8042	                           0
-ec2-35-169-58-188.compute-1.amazonaws.com:42658	        RUNNING	ec2-35-169-58-188.compute-1.amazonaws.com:8042	                           0
-ec2-54-208-77-124.compute-1.amazonaws.com:44917	        RUNNING	ec2-54-208-77-124.compute-1.amazonaws.com:8042	                           0
+spark5.mids.com:45807	        RUNNING	spark5.mids.com:8042	                           0
+spark1.mids.com:43000	        RUNNING	spark1.mids.com:8042	                           0
+spark3.mids.com:44874	        RUNNING	spark3.mids.com:8042	                           0
+spark4.mids.com:43450	        RUNNING	spark4.mids.com:8042	                           0
+spark2.mids.com:45335	        RUNNING	spark2.mids.com:8042	                           0
 ```
 # Checking the cluster
 Go to your browser
