@@ -1,4 +1,6 @@
-# Human genome 38
+# Step 3: Human genome 38 
+
+<a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_hadoop.md><<Previous Hadoop Setup</a>  
 
 We will first download the BWA aligner, which will align files against our reference human genome `hg38` which is the 38 version of the human genome assembly. The downloaded files will be inserted into our HDFS. 
 
