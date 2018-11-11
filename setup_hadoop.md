@@ -221,6 +221,18 @@ Last Block Report: Sun Nov 11 11:13:15 CST 2018
 ...
 ...
 ```
+### Note
+If you started `start-dfs.sh` and no datanode launched, here's a few steps I tried and worked. 
+- remove all files under `tmp` folder. This is for hadoop tmp folder. Since we're using the default `tmp` folder and didn't specify in `core-site.xml`, all hdfs files goes directly into `/tmp/` folder. 
+- remove all files under `/data/` directory. This is we specified in `hdfs-site.xml` configuration file. 
+- format the hdfs. 
+```
+# rm -rf /tmp/*
+# rm -rf /data/*
+# hdfs namenode -format
+# start-dfs.sh
+```
+
 Check the YARN status
 ```
 # yarn node -list
@@ -254,8 +266,9 @@ http://184.173.63.164:19888/jobhistory (for Job History Server) [might not work 
 <img src="img/yarn.png" width="800"></p>
 <p align="center">Figure 2. Cluster Control</p> 
 
+
 ---------------
 
 # Human Genome
 
-Downloading human genome and distributing into HDFS. <a href=>https://github.com/kckenneth/GenomicAssembly/blob/master/setup_HG38.md</a>
+Downloading human genome and distributing into HDFS. <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_HG38.md> Here</a>
