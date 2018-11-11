@@ -255,8 +255,10 @@ http://184.173.63.164:19888/jobhistory (for Job History Server) [might not work 
 <p align="center">Figure 2. Cluster Control</p> 
 
 ---------------
-# Install Spark BWA (On master node, spark1)
-For detailed instruction for <a href=https://github.com/citiususc/SparkBWA>Spark BWA</a> 
+# Install Spark BWA: Burrows-Wheeler Aligner
+# (On master node, spark1)
+For detailed instruction for <a href=https://github.com/citiususc/SparkBWA>Spark BWA</a>  
+
 if on Ubuntu:
 ```
 # apt-get -y install gcc make git zlib-devel maven 
