@@ -253,6 +253,34 @@ http://184.173.63.164:19888/jobhistory (for Job History Server) [might not work 
 <p align="center">
 <img src="img/yarn.png" width="800"></p>
 <p align="center">Figure 2. Cluster Control</p>
+---------------
+# Install Spark BWA (On master node, spark1)
+
+if on Ubuntu:
+```
+# apt-get -y install gcc make git zlib-devel maven 
+```
+if on Centos:
+```
+# yum install -y gcc make git zlib-devel maven 
+```
+
+assuming you are building this in /root
+For detailed instruction for <a href=https://github.com/citiususc/SparkBWA>Spark BWA</a> 
+```
+# cd /root
+# git clone https://github.com/citiususc/SparkBWA.git
+# cd SparkBWA
+# mvn package
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2:17.446s
+[INFO] Finished at: Sun Nov 11 09:47:14 CST 2018
+[INFO] Final Memory: 32M/241M
+[INFO] ------------------------------------------------------------------------
+```
 
 ### Checking the java
 
