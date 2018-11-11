@@ -24,7 +24,7 @@ Activate the bash_profile
 # source ~/.bash_profile
 ```
 
-## Check disks (Optional)
+## 4. Check disks (Optional)
 Since we only launched one disk (100GB), we will only see one disk. So it does not matter if we skip this step. But to check the disk to be on the safe side. 
 ```
 # fdisk -l | grep Disk | grep GB
@@ -35,37 +35,12 @@ Disk /dev/xvda: 107.4 GB, 107374182400 bytes, 209715200 sectors
 ```
 
 ## Create the data directory
-# we don't have a separate disk to hold the data, so just use /root:
+we don't have a separate disk to hold the data, so just use /root:
 ```
 # mkdir -m 777 /data
 ```
-
-
-
-# System Setup
-Install 
-```
-# yum install -y rsync net-tools java-1.8.0-openjdk-devel ftp://fr2.rpmfind.net/linux/Mandriva/devel/cooker/x86_64/media/contrib/release/nmon-14g-1-mdv2012.0.x86_64.rpm
-```
-Setting the user and password. `passwd` will ask you to set the password for the user `hadoop`.
-```
-# adduser hadoop
-# passwd hadoop
-```
-
-Install Hadoop and extract in `/usr/local`
-```
-# cd /usr/local
-# curl http://apache.claz.org/hadoop/core/hadoop-2.9.1/hadoop-2.9.1.tar.gz| tar -zx -C /usr/local --show-transformed --transform='s,/*[^/]*,hadoop,'
-```
-
-To allow permission on each directory. So far we have worked on `/data` and `/usr/local` directory. 
-```
-# chown -R hadoop.hadoop /data
-# chown -R hadoop.hadoop /usr/local/hadoop
-```
-
-## Hadoop Configuration Setup (on master node first)
+-------------
+# Hadoop Configuration Setup (on master node first --> scp to other nodes)
 
 ```
 # cd $HADOOP_HOME/etc/hadoop      (Similar to /usr/local/hadoop/etc/hadoop)
@@ -315,3 +290,16 @@ Log files are located under `$HADOOP_HOME/logs`. You can check the java services
 28431 SecondaryNameNode
 ```
 
+
+# System Setup
+Install 
+```
+# yum install -y rsync net-tools java-1.8.0-openjdk-devel ftp://fr2.rpmfind.net/linux/Mandriva/devel/cooker/x86_64/media/contrib/release/nmon-14g-1-mdv2012.0.x86_64.rpm
+```
+
+
+To allow permission on each directory. So far we have worked on `/data` and `/usr/local` directory. 
+```
+# chown -R hadoop.hadoop /data
+# chown -R hadoop.hadoop /usr/local/hadoop
+```
