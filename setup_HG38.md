@@ -30,7 +30,7 @@ assuming you are building this in /root
 [INFO] ------------------------------------------------------------------------
 ```
 ------------
-
+## Download two files
 ```
 wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12750/sequence_read/ERR000589_1.filt.fastq.gz
 wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12750/sequence_read/ERR000589_2.filt.fastq.gz
