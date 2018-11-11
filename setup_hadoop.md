@@ -63,7 +63,7 @@ After all those configurations setup, we will copy them into other 2 hdfs nodes.
   <configuration>
     <property>
       <name>fs.defaultFS</name>
-      <value>hdfs://master/</value>
+      <value>hdfs://spark1/</value>
     </property>
   </configuration>
 ```
@@ -77,67 +77,39 @@ All
   <configuration>
     <property>
       <name>yarn.resourcemanager.hostname</name>
-      <value>master</value>
-    </property>
-    
-    <property>
-      <name>yarn.nodemanager.aux-services</name>
-      <value>mapreduce_shuffle</value>
-    </property>
-    
-    <property>
-       <name>yarn.resourcemanager.bind-host</name>
-       <value>10.91.105.18</value>
-      </property>
-      
-     <property>
-        <name>yarn.nodemanager.resource.cpu-vcores</name>
-        <value>2</value>
-    </property>
-    
-    <property>
-        <name>yarn.nodemanager.resource.memory-mb</name>
-        <value>4096</value>
-    </property>
-  </configuration>
-```
-REQUIRED: use you private IPs for your cluster, add this property also (where 0.0.0.0 must be the private IP of the master node)
-------------------
-
-This is in details and explanation of which property we're using. 
-```
-vi yarn-site.xml
-
-  <?xml version="1.0"?>
-  <configuration>
-    <property>
-      <name>yarn.resourcemanager.hostname</name>
-      <value>master</value>
+      <value>spark1</value>
     </property>
     <property>
       <name>yarn.nodemanager.aux-services</name>
       <value>mapreduce_shuffle</value>
     </property>
-  </configuration>
-```
-If you want to use priviate IP for your cluster, 
-```
-      <property>
+    <property>
        <name>yarn.resourcemanager.bind-host</name>
-       <value>0.0.0.0</value>
+       <value>10.77.147.231</value>
       </property>
-```
-If you're using 2CPU/4G node, you add this property to yarn-site.xml as well.
-```
      <property>
         <name>yarn.nodemanager.resource.cpu-vcores</name>
-        <value>2</value>
+        <value>4</value>
     </property>
     <property>
         <name>yarn.nodemanager.resource.memory-mb</name>
         <value>4096</value>
     </property>
+    <property>
+      <name>yarn.scheduler.maximum-allocation-mb</name>
+      <value>20000</value>
+    </property>
+    <property>
+      <name>yarn.nodemanager.resource.memory-mb</name>
+      <value>32768</value>
+    </property>
+    <property> 
+      <name>yarn.scheduler.minimum-allocation-mb</name> 
+      <value>3000</value> 
+    </property>
+  </configuration>
 ```
+
 #### 3. mapred-site.xml.template
 
 ```
