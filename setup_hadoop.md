@@ -40,7 +40,8 @@ we don't have a separate disk to hold the data, so just use /root:
 # mkdir -m 777 /data
 ```
 -------------
-# Hadoop Configuration Setup (on master node first --> scp to other nodes)
+# Hadoop Configuration Setup 
+# (on master node, spark1, first --> scp to other nodes)
 
 ```
 # cd $HADOOP_HOME/etc/hadoop      (Similar to /usr/local/hadoop/etc/hadoop)
