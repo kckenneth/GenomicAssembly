@@ -173,33 +173,7 @@ spark4
 spark5
 ```
 
-# Start Spark
-we will start spark from spark1 as master node. There are a few script you should be familiar with.  
-```
-sbin/start-master.sh - Starts a master instance on the machine the script is executed on
-sbin/start-slaves.sh - Starts a slave instance on each machine specified in the conf/slaves file
-sbin/start-all.sh - Starts both a master and a number of slaves as described above
-sbin/stop-master.sh - Stops the master that was started via the bin/start-master.sh script
-sbin/stop-slaves.sh - Stops all slave instances on the machines specified in the conf/slaves file
-sbin/stop-all.sh - Stops both the master and the slaves as described above
-```
+# Setup Hadoop
 
-Start the master and check if it's working at `http://<master_ip>:8080/` = `http://50.97.252.101:8080`
-```
-# $SPARK_HOME/sbin/start-master.sh
+<a href=>Here</a>
 
-starting org.apache.spark.deploy.master.Master, logging to /usr/local/spark/logs/spark-root-org.apache.spark.deploy.master.Master-1-spark1.mids.com.out
-```
-
-<p align="center">
-<img src="img/spark.png" width="800"></p>
-<p align="center">Figure 1. Spark</p>
-
-Start the slaves, refresh the browser and check if all workers are now active. 
-```
-# $SPARK_HOME/sbin/start-slaves.sh
-```
-
-<p align="center">
-<img src="img/spark_workers.png" width="800"></p>
-<p align="center">Figure 2. Spark with 3 workers</p>
