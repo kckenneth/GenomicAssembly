@@ -121,3 +121,6 @@ If you're not in other nodes, from the `spark1`, ssh into all other nodes, make 
 # rsync -av /Data/HumanBase spark4:/Data/
 # rsync -av /Data/HumanBase spark5:/Data/
 ```
+----------------
+# Validation by Alignment
+We will now validate our reference genome by alignment with the files downloaded. Follow the <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/execution.md>Next Step</a>.
