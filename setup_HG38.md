@@ -1,6 +1,6 @@
 # Human genome 38
 
-This is the 38 verion of the human genome. We will download two zipped files and align to our standard human genome 38. Make sure you get the raw reads from the 1000 Genomes Project and insert into HDFS. These will be the ones we will be aligning.
+We will first download the BWA aligner, which will align files against our reference human genome `hg38` which is the 38 version of the human genome assembly. The downloaded files will be inserted into our HDFS. 
 
 # Install Spark BWA: Burrows-Wheeler Aligner
 # (On master node, spark1)
@@ -40,4 +40,24 @@ gzip -d ERR000589_2.filt.fastq.gz
 # push to HDFS
 hdfs dfs -copyFromLocal ERR000589_1.filt.fastq /ERR000589_1.filt.fastq
 hdfs dfs -copyFromLocal ERR000589_2.filt.fastq /ERR000589_2.filt.fastq
+```
+You need to install `ftp` to connect to remote ftp server. 
+```
+# yum install ftp
+```
+We're downloading the reference hg38 from boradinstitute which setup ftp server. So we're connecting and downloading hg38 files over ftp. When asked password, just hit `Enter`. No need to have a password. We're still working in master node, spark1.  
+For more reference, <a href=https://software.broadinstitute.org/gatk/download/bundle>Broad Institute</a>.
+```
+mkdir -pm 777 /Data/HumanBase
+cd /Data/HumanBase
+ftp ftp.broadinstitute.org
+user: gsapubftp-anonymous
+```
+Once you're in ftp mode, enter these commands below to ensure non-interactive and binary modes. When you're in `ftp>` prompt, do the following. 
+```
+prompt
+binary
+cd bundle
+cd hg38
+mget *
 ```
