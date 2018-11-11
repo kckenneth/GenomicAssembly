@@ -248,7 +248,7 @@ http://184.173.63.164:19888/jobhistory (for Job History Server) [might not work 
 #### dfshealth.html
 
 <p align="center">
-<img src="img/dfs.png" width="600"></p>
+<img src="img/dfs.png" width="800"></p>
 <p align="center">Figure 1. DFS Health</p>
 
 #### cluster
