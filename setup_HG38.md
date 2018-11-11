@@ -53,7 +53,11 @@ cd /Data/HumanBase
 ftp ftp.broadinstitute.org
 user: gsapubftp-anonymous
 ```
-Once you're in ftp mode, enter these commands below to ensure non-interactive and binary modes. When you're in `ftp>` prompt, do the following. This will download the reference genome `dbsnp_144.hg38.vcf.gz` of size with `3.2GB`. This will take a few minutes. 
+Once you're in ftp mode, enter these commands below to ensure non-interactive and binary modes. When you're in `ftp>` prompt, do the following. This will download 
+- dbsnp_144.hg38.vcf.gz = 3.2 GB
+- 1000G_omni2.5.hg38.vcf.gz = 51 MB
+- Homo_sapiens_assembly38.fasta.64.alt = 477 KB
+- Homo_sapiens_assembly38.fasta.gz = 890 MB
 ```
 > prompt
 > binary
@@ -80,12 +84,12 @@ if on centos
 # Distribute all files to other nodes
 If you're not in other nodes, from the `spark1`, ssh into all other nodes, make a directory `/Data`. 
 ```
-ssh spark2 mkdir -m 777 /Data
-ssh spark3 mkdir -m 777 /Data
-ssh spark4 mkdir -m 777 /Data
-ssh spark5 mkdir -m 777 /Data
-rsync -av /Data/HumanBase spark2:/Data/
-rsync -av /Data/HumanBase spark3:/Data/
-rsync -av /Data/HumanBase spark4:/Data/
-rsync -av /Data/HumanBase spark5:/Data/
+# ssh spark2 mkdir -m 777 /Data
+# ssh spark3 mkdir -m 777 /Data
+# ssh spark4 mkdir -m 777 /Data
+# ssh spark5 mkdir -m 777 /Data
+# rsync -av /Data/HumanBase spark2:/Data/
+# rsync -av /Data/HumanBase spark3:/Data/
+# rsync -av /Data/HumanBase spark4:/Data/
+# rsync -av /Data/HumanBase spark5:/Data/
 ```
