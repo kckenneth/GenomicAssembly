@@ -53,11 +53,13 @@ cd /Data/HumanBase
 ftp ftp.broadinstitute.org
 user: gsapubftp-anonymous
 ```
-Once you're in ftp mode, enter these commands below to ensure non-interactive and binary modes. When you're in `ftp>` prompt, do the following. This will download 
+We will download the following files from the Broad Institute ftp server. This will take an hour or so. 
 - dbsnp_144.hg38.vcf.gz = 3.2 GB
 - 1000G_omni2.5.hg38.vcf.gz = 51 MB
 - Homo_sapiens_assembly38.fasta.64.alt = 477 KB
 - Homo_sapiens_assembly38.fasta.gz = 890 MB
+ 
+Once you're in ftp mode, enter these commands below to ensure non-interactive and binary modes. When you're in `ftp>` prompt, do the following. 
 ```
 > prompt
 > binary
