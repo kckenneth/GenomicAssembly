@@ -201,11 +201,11 @@ Check the HDFS status, if you have only a few nodes up, check the failed node `/
 ```
 # hdfs dfsadmin -report
 
-Configured Capacity: 526449623040 (490.29 GB)
-Present Capacity: 481735657834 (448.65 GB)
-DFS Remaining: 481279193088 (448.23 GB)
-DFS Used: 456464746 (435.32 MB)
-DFS Used%: 0.09%
+Configured Capacity: 1052899246080 (980.59 GB)
+Present Capacity: 972033806336 (905.28 GB)
+DFS Remaining: 972033560576 (905.28 GB)
+DFS Used: 245760 (240 KB)
+DFS Used%: 0.00%
 Under replicated blocks: 0
 Blocks with corrupt replicas: 0
 Missing blocks: 0
@@ -213,25 +213,25 @@ Missing blocks (with replication factor 1): 0
 Pending deletion blocks: 0
 
 -------------------------------------------------
-Live datanodes (5):
+Live datanodes (10):
 
 Name: 10.77.147.210:50010 (spark2.mids.com)
 Hostname: spark2.mids.com
 Decommission Status : Normal
 Configured Capacity: 105289924608 (98.06 GB)
-DFS Used: 32768 (32 KB)
-Non DFS Used: 2839154688 (2.64 GB)
-DFS Remaining: 97095503872 (90.43 GB)
+DFS Used: 24576 (24 KB)
+Non DFS Used: 2732392448 (2.54 GB)
+DFS Remaining: 97202274304 (90.53 GB)
 DFS Used%: 0.00%
-DFS Remaining%: 92.22%
+DFS Remaining%: 92.32%
 Configured Cache Capacity: 0 (0 B)
 Cache Used: 0 (0 B)
 Cache Remaining: 0 (0 B)
 Cache Used%: 100.00%
 Cache Remaining%: 0.00%
 Xceivers: 1
-Last contact: Sun Nov 11 11:15:06 CST 2018
-Last Block Report: Sun Nov 11 11:13:15 CST 2018
+Last contact: Mon Nov 12 13:49:27 CST 2018
+Last Block Report: Mon Nov 12 13:48:51 CST 2018
 
 ...
 ...
