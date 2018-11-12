@@ -69,7 +69,7 @@ Found 2 items
 -rw-r--r--   3 root supergroup 1804779901 2018-11-12 14:28 /ERR000589_1.filt.fastq
 -rw-r--r--   3 root supergroup 1804779901 2018-11-12 14:40 /ERR000589_2.filt.fastq
 ```
-Ignore the NativeCodeLoader warning message. 
+Ignore the NativeCodeLoader warning message. You can also check from other nodes, eg `spark2` and see if files are distributed across all nodes. The fact that you can browse the `hadoop fs -ls /` from all other nodes indicates that HDFS is a distributed file system across all nodes. 
 
 ## Download a reference human genome hg38 (2 hours)
 You need to install `ftp` to connect to remote ftp server. 
