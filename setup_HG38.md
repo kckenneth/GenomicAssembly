@@ -49,19 +49,27 @@ cd ~
 ------------
 ## Download two files 
 ```
-wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12750/sequence_read/ERR000589_1.filt.fastq.gz
-wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12750/sequence_read/ERR000589_2.filt.fastq.gz
+# wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12750/sequence_read/ERR000589_1.filt.fastq.gz
+# wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/NA12750/sequence_read/ERR000589_2.filt.fastq.gz
 ```
 #### uncompress
 ```
-gzip -d ERR000589_1.filt.fastq.gz
-gzip -d ERR000589_2.filt.fastq.gz
+# gzip -d ERR000589_1.filt.fastq.gz
+# gzip -d ERR000589_2.filt.fastq.gz
 ```
 ## push files to HDFS
 ```
-hdfs dfs -copyFromLocal ERR000589_1.filt.fastq /ERR000589_1.filt.fastq
-hdfs dfs -copyFromLocal ERR000589_2.filt.fastq /ERR000589_2.filt.fastq
+# hdfs dfs -copyFromLocal ERR000589_1.filt.fastq /ERR000589_1.filt.fastq
+# hdfs dfs -copyFromLocal ERR000589_2.filt.fastq /ERR000589_2.filt.fastq
 ```
+## Check if files are in HDFS directory
+```
+# hadoop fs -ls /
+Found 2 items
+-rw-r--r--   3 root supergroup 1804779901 2018-11-12 14:28 /ERR000589_1.filt.fastq
+-rw-r--r--   3 root supergroup 1804779901 2018-11-12 14:40 /ERR000589_2.filt.fastq
+```
+Ignore the NativeCodeLoader warning message. 
 
 ## Download a reference human genome hg38 (2 hours)
 You need to install `ftp` to connect to remote ftp server. 
