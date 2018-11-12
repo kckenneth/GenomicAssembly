@@ -181,6 +181,12 @@ spark10
 First we will format the namenode before we spin up our cluster. If you format a running cluster, you will lose everthing. 
 ```
 # hdfs namenode -format
+```
+**Note**  
+If asked to [re]format, you must reply Y (not just y) if you want to reformat, else Hadoop will abort the format.
+
+Spin up the HDFS cluster. 
+```
 # start-dfs.sh
 # start-yarn.sh
 ```
