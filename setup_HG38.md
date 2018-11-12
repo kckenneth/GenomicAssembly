@@ -31,6 +31,12 @@ assuming you are building this in /root
 [INFO] Final Memory: 32M/241M
 [INFO] ------------------------------------------------------------------------
 ```
+## Distribute SparkBWA to other nodes (Optional) 
+Now, let us distribute our build to other nodes - not strictly required, but why not:
+```
+# scp -r SparkBWA spark2:root/
+# scp -r SparkBWA spark3:root/
+```
 ------------
 ## Download two files 
 ```
