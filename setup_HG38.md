@@ -113,6 +113,16 @@ if on centos
 # yum install -y epel-release
 # yum install -y bwa
 # bwa index Homo_sapiens_assembly38.fasta.gz
+
+[bwa_index] Pack FASTA... 60.64 sec
+[bwa_index] Construct BWT for the packed sequence...
+[BWTIncCreate] textLength=6434693834, availableWord=464768632
+[BWTIncConstructFromPacked] 10 iterations done. 99999994 characters processed.
+[BWTIncConstructFromPacked] 20 iterations done. 199999994 characters processed.
+[BWTIncConstructFromPacked] 30 iterations done. 299999994 characters processed.
+...
+...
+...
 ```
 ----------
 # Distribute all files to other nodes
