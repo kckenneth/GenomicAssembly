@@ -173,6 +173,11 @@ spark2
 spark3
 spark4
 spark5
+spark6
+spark7
+spark8
+spark9
+spark10
 ```
 
 # Setup Hadoop
