@@ -155,8 +155,10 @@ vi hdfs-site.xml
 ```
 # rsync -a /usr/local/hadoop/etc/hadoop/* spark2:/usr/local/hadoop/etc/hadoop/
 # rsync -a /usr/local/hadoop/etc/hadoop/* spark3:/usr/local/hadoop/etc/hadoop/
-# rsync -a /usr/local/hadoop/etc/hadoop/* spark4:/usr/local/hadoop/etc/hadoop/
-# rsync -a /usr/local/hadoop/etc/hadoop/* spark5:/usr/local/hadoop/etc/hadoop/
+...
+...
+# rsync -a /usr/local/hadoop/etc/hadoop/* spark9:/usr/local/hadoop/etc/hadoop/
+# rsync -a /usr/local/hadoop/etc/hadoop/* spark10:/usr/local/hadoop/etc/hadoop/
 ```
 Change the nodes information in `slaves` file. Remove anything in there. 
 ```
