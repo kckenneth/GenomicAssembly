@@ -36,6 +36,10 @@ Now, let us distribute our build to other nodes - not strictly required, but why
 ```
 # scp -r SparkBWA spark2:root/
 # scp -r SparkBWA spark3:root/
+...
+...
+# scp -r SparkBWA spark9:root/
+# scp -r SparkBWA spark10:root/
 ```
 ------------
 ## Download two files 
