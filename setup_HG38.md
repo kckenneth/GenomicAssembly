@@ -61,7 +61,7 @@ cd /Data/HumanBase
 ftp ftp.broadinstitute.org
 user: gsapubftp-anonymous
 ```
-We will download the 23 files from the Broad Institute ftp server. This will take more than an hour. Once you're in ftp mode, enter these commands below to ensure non-interactive and binary modes. When you're in `ftp>` prompt, do the following. 
+We will download the **23 files** from the Broad Institute ftp server. This will take more than an hour. Once you're in ftp mode, enter these commands below to ensure non-interactive and binary modes. When you're in `ftp>` prompt, do the following. 
 ```
 > prompt
 > binary
