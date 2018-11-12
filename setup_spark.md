@@ -6,6 +6,8 @@
 
 # Genomic Assembly
 
+<a href=https://github.com/kckenneth/GenomicAssembly/blob/master/README.md><<Previous "Introduction"</a>
+
 ## 5 Nodes privision 
 
 Create 5 nodes with 4 CPU, 32G RAM, 100G disk with CentOS. 
