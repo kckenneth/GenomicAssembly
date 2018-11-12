@@ -8,18 +8,23 @@
 
 <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/README.md><< Introduction</a>
 
-## 5 Nodes privision 
+## 10 Nodes privision 
 
-Create 5 nodes with 4 CPU, 32G RAM, 100G disk with CentOS. 
+Create 10 nodes with 4 CPU, 32G RAM, 100G disk with CentOS. 
 ```
 $ slcli vs create --datacenter=hou02 --hostname=spark1 --domain=mids.com --billing=hourly --cpu=4 --memory=32768 --disk=100 --os=CENTOS_LATEST_64
 $ slcli vs create --datacenter=hou02 --hostname=spark2 --domain=mids.com --billing=hourly --cpu=4 --memory=32768 --disk=100 --os=CENTOS_LATEST_64
 $ slcli vs create --datacenter=hou02 --hostname=spark3 --domain=mids.com --billing=hourly --cpu=4 --memory=32768 --disk=100 --os=CENTOS_LATEST_64
 $ slcli vs create --datacenter=hou02 --hostname=spark4 --domain=mids.com --billing=hourly --cpu=4 --memory=32768 --disk=100 --os=CENTOS_LATEST_64
 $ slcli vs create --datacenter=hou02 --hostname=spark5 --domain=mids.com --billing=hourly --cpu=4 --memory=32768 --disk=100 --os=CENTOS_LATEST_64
+$ slcli vs create --datacenter=hou02 --hostname=spark6 --domain=mids.com --billing=hourly --cpu=4 --memory=32768 --disk=100 --os=CENTOS_LATEST_64
+$ slcli vs create --datacenter=hou02 --hostname=spark7 --domain=mids.com --billing=hourly --cpu=4 --memory=32768 --disk=100 --os=CENTOS_LATEST_64
+$ slcli vs create --datacenter=hou02 --hostname=spark8 --domain=mids.com --billing=hourly --cpu=4 --memory=32768 --disk=100 --os=CENTOS_LATEST_64
+$ slcli vs create --datacenter=hou02 --hostname=spark9 --domain=mids.com --billing=hourly --cpu=4 --memory=32768 --disk=100 --os=CENTOS_LATEST_64
+$ slcli vs create --datacenter=hou02 --hostname=spark10 --domain=mids.com --billing=hourly --cpu=4 --memory=32768 --disk=100 --os=CENTOS_LATEST_64
 ```
 
-Checking all nodes privision
+Checking all nodes provision
 
 ```
 $ slcli vs list 
@@ -27,11 +32,16 @@ $ slcli vs list
 :..........:...............:................:...............:............:........:
 :    id    :    hostname   :   primary_ip   :   backend_ip  : datacenter : action :
 :..........:...............:................:...............:............:........:
-: 64972694 :     spark1    : 184.173.63.164 : 10.77.147.231 :   hou02    :   -    :
-: 64972722 :     spark2    : 184.173.63.165 : 10.77.147.210 :   hou02    :   -    :
-: 64972734 :     spark3    : 184.173.63.162 : 10.77.147.229 :   hou02    :   -    :
-: 64972750 :     spark4    : 184.173.63.166 : 10.77.147.239 :   hou02    :   -    :
-: 64972762 :     spark5    :  50.23.42.89   : 10.77.147.241 :   hou02    :   -    :
+: 65044368 :     spark1    :  50.23.42.89   : 10.77.147.231 :   hou02    :   -    :
+: 65044492 :    spark10    :  50.23.42.83   : 10.77.147.230 :   hou02    :   -    :
+: 65044382 :     spark2    : 184.173.63.164 : 10.77.147.210 :   hou02    :   -    :
+: 65044390 :     spark3    :  50.23.42.86   : 10.77.147.239 :   hou02    :   -    :
+: 65044396 :     spark4    : 184.173.63.166 : 10.77.147.229 :   hou02    :   -    :
+: 65044402 :     spark5    :  50.23.42.87   : 10.77.147.241 :   hou02    :   -    :
+: 65044426 :     spark6    : 184.173.63.165 : 10.77.147.214 :   hou02    :   -    :
+: 65044444 :     spark7    :  50.23.42.84   : 10.77.147.217 :   hou02    :   -    :
+: 65044454 :     spark8    :  50.23.42.85   : 10.77.147.219 :   hou02    :   -    :
+: 65044476 :     spark9    :  50.23.42.82   : 10.77.147.224 :   hou02    :   -    :
 :..........:...............:................:...............:............:........:
 ```
 
@@ -41,12 +51,17 @@ To easily ssh with the name instead of the IP addresses, we will setup the DNS. 
 ```
 # vi /etc/hosts
 
-127.0.0.1       localhost.localdomain localhost
+127.0.0.1      localhost.localdomain localhost
 10.77.147.231  spark1.mids.com spark1
 10.77.147.210  spark2.mids.com spark2
-10.77.147.229  spark3.mids.com spark3
-10.77.147.239  spark4.mids.com spark4
+10.77.147.239  spark3.mids.com spark3
+10.77.147.229  spark4.mids.com spark4
 10.77.147.241  spark5.mids.com spark5
+10.77.147.214  spark6.mids.com spark6
+10.77.147.217  spark7.mids.com spark7
+10.77.147.219  spark8.mids.com spark8
+10.77.147.224  spark9.mids.com spark9
+10.77.147.230  spark10.mids.com spark10
 ```
 
 ## Setup passwordless ssh
@@ -63,23 +78,27 @@ Before you copy, make sure you test from spark1 to `ssh spark2`, etc. When ECDSA
 exit
 # ssh spark2
 exit
-# ssh spark3
-exit
-# ssh spark4
-exit
-# ssh spark5
+...
+...
+# ssh spark10
 exit
 
-# scp ~/.ssh/* root@184.173.63.165:/root/.ssh/
-# scp ~/.ssh/* root@184.173.63.162:/root/.ssh/
-# scp ~/.ssh/* root@184.173.63.166:/root/.ssh/
 # scp ~/.ssh/* root@50.23.42.89:/root/.ssh/
+# scp ~/.ssh/* root@184.173.63.164:/root/.ssh/
+# scp ~/.ssh/* root@50.23.42.86:/root/.ssh/
+# scp ~/.ssh/* root@184.173.63.166:/root/.ssh/
+# scp ~/.ssh/* root@50.23.42.87:/root/.ssh/
+# scp ~/.ssh/* root@184.173.63.165:/root/.ssh/
+# scp ~/.ssh/* root@50.23.42.84:/root/.ssh/
+# scp ~/.ssh/* root@50.23.42.85:/root/.ssh/
+# scp ~/.ssh/* root@50.23.42.82:/root/.ssh/
+# scp ~/.ssh/* root@50.23.42.83:/root/.ssh/
 
 # for i in spark1 spark2 spark3 spark4 spark5; do ssh-copy-id $i; done
 ```
 ssh-copy-id will copy `id_rsa.pub` key to authorized_keys file (will be created) in other nodes. So when it tries to establish the connection, it will first ask the password of the node it's sshing into.
 
-#### Check if all 5 nodes can communicate without password from spark1 node
+#### Check if all nodes can communicate without password from spark1 node
 
 ```
 # vi test.sh
@@ -89,7 +108,7 @@ Copy the following script
 #!/bin/bash
 
 # Edit node list
-nodes="spark1 spark2 spark3 spark4 spark5"
+nodes="spark1 spark2 spark3 spark4 spark5 spark6 spark7 spark8 spark9 spark10"
 
 # Test ssh configuration
 for i in $nodes
