@@ -45,7 +45,7 @@ $ slcli vs list
 :..........:...............:................:...............:............:........:
 ```
 
-## Setup DNS on all 5 nodes
+## Setup DNS on all nodes
 
 To easily ssh with the name instead of the IP addresses, we will setup the DNS. You need to add the spark1.mids.com as well. It's important you'd use the private IP address. I tried using the public and it gives me an error by the time I got into yarn resource manager. 
 ```
