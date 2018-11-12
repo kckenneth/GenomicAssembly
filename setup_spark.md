@@ -123,31 +123,12 @@ Run the script
 # chmod 755 test.sh
 # ./test.sh
 
-Testing spark1 to spark1: Sat Nov 10 20:51:19 CST 2018
-Testing spark1 to spark2: Sat Nov 10 20:51:19 CST 2018
-Testing spark1 to spark3: Sat Nov 10 20:51:20 CST 2018
-Testing spark1 to spark4: Sat Nov 10 20:51:21 CST 2018
-Testing spark1 to spark5: Sat Nov 10 20:51:22 CST 2018
-Testing spark2 to spark1: Sat Nov 10 20:51:22 CST 2018
-Testing spark2 to spark2: Sat Nov 10 20:51:23 CST 2018
-Testing spark2 to spark3: Sat Nov 10 20:51:24 CST 2018
-Testing spark2 to spark4: Sat Nov 10 20:51:25 CST 2018
-Testing spark2 to spark5: Sat Nov 10 20:51:26 CST 2018
-Testing spark3 to spark1: Sat Nov 10 20:51:26 CST 2018
-Testing spark3 to spark2: Sat Nov 10 20:51:27 CST 2018
-Testing spark3 to spark3: Sat Nov 10 20:51:28 CST 2018
-Testing spark3 to spark4: Sat Nov 10 20:51:29 CST 2018
-Testing spark3 to spark5: Sat Nov 10 20:51:30 CST 2018
-Testing spark4 to spark1: Sat Nov 10 20:51:30 CST 2018
-Testing spark4 to spark2: Sat Nov 10 20:51:31 CST 2018
-Testing spark4 to spark3: Sat Nov 10 20:51:31 CST 2018
-Testing spark4 to spark4: Sat Nov 10 20:51:33 CST 2018
-Testing spark4 to spark5: Sat Nov 10 20:51:33 CST 2018
-Testing spark5 to spark1: Sat Nov 10 20:51:34 CST 2018
-Testing spark5 to spark2: Sat Nov 10 20:51:34 CST 2018
-Testing spark5 to spark3: Sat Nov 10 20:51:35 CST 2018
-Testing spark5 to spark4: Sat Nov 10 20:51:36 CST 2018
-Testing spark5 to spark5: Sat Nov 10 20:51:37 CST 2018
+Testing spark1 to spark1: Mon Nov 12 10:29:04 CST 2018
+Testing spark1 to spark2: Mon Nov 12 10:29:04 CST 2018
+...
+...
+Testing spark10 to spark9: Mon Nov 12 10:30:21 CST 2018
+Testing spark10 to spark10: Mon Nov 12 10:30:22 CST 2018
 ```
 
 # Install Java, SBT and Spark (on all nodes)
