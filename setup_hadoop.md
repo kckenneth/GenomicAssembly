@@ -254,22 +254,27 @@ Check the YARN status
 ```
 # yarn node -list
 
-Total Nodes:5
+Total Nodes:10
          Node-Id	     Node-State	Node-Http-Address	Number-of-Running-Containers
-spark5.mids.com:45807	        RUNNING	spark5.mids.com:8042	                           0
-spark1.mids.com:43000	        RUNNING	spark1.mids.com:8042	                           0
-spark3.mids.com:44874	        RUNNING	spark3.mids.com:8042	                           0
-spark4.mids.com:43450	        RUNNING	spark4.mids.com:8042	                           0
-spark2.mids.com:45335	        RUNNING	spark2.mids.com:8042	                           0
+spark10.mids.com:36149	        RUNNING	spark10.mids.com:8042	                           0
+spark4.mids.com:41793	        RUNNING	spark4.mids.com:8042	                           0
+spark1.mids.com:39886	        RUNNING	spark1.mids.com:8042	                           0
+spark6.mids.com:37722	        RUNNING	spark6.mids.com:8042	                           0
+spark8.mids.com:46237	        RUNNING	spark8.mids.com:8042	                           0
+spark2.mids.com:38452	        RUNNING	spark2.mids.com:8042	                           0
+spark9.mids.com:43367	        RUNNING	spark9.mids.com:8042	                           0
+spark7.mids.com:43997	        RUNNING	spark7.mids.com:8042	                           0
+spark3.mids.com:39723	        RUNNING	spark3.mids.com:8042	                           0
+spark5.mids.com:34349	        RUNNING	spark5.mids.com:8042	                           0
 ```
 # Checking the cluster
 Go to your browser
 To check your cluster, browse to:  
-master IP = `184.173.63.164`. Don't change the port. 
+master IP = `50.23.42.89`. Don't change the port. 
 ```
-http://184.173.63.164:50070/dfshealth.html
-http://184.173.63.164:8088/cluster
-http://184.173.63.164:19888/jobhistory (for Job History Server) [might not work unless you have job running]
+http://50.23.42.89:50070/dfshealth.html
+http://50.23.42.89:8088/cluster
+http://50.23.42.89:19888/jobhistory (for Job History Server) [might not work unless you have job running]
 ```
 #### dfshealth.html
 
