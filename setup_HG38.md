@@ -23,14 +23,18 @@ assuming you are building this in /root
 # cd SparkBWA
 # mvn package
 
+[INFO] Dependency-reduced POM written at: /root/SparkBWA/dependency-reduced-pom.xml
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 2:17.446s
-[INFO] Finished at: Sun Nov 11 09:47:14 CST 2018
+[INFO] Total time: 2:06.587s
+[INFO] Finished at: Mon Nov 12 14:03:18 CST 2018
 [INFO] Final Memory: 32M/241M
 [INFO] ------------------------------------------------------------------------
 ```
+**Note**  
+Detailed instructions on SparkBWA is <a href=https://github.com/citiususc/SparkBWA>Here</a>. 
+
 ## Distribute SparkBWA to other nodes (Optional) 
 Now, let us distribute our build to other nodes - not strictly required, but why not:
 ```
