@@ -6,7 +6,7 @@
 
 # Genomic Assembly
 
-<a href=https://github.com/kckenneth/GenomicAssembly/blob/master/README.md><<Previous "Introduction"</a>
+<a href=https://github.com/kckenneth/GenomicAssembly/blob/master/README.md><< Introduction</a>
 
 ## 5 Nodes privision 
 
