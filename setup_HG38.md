@@ -32,6 +32,8 @@ assuming you are building this in /root
 [INFO] Final Memory: 32M/241M
 [INFO] ------------------------------------------------------------------------
 ```
+`mvn package` will create the target folder, which will contain the jar file needed to run SparkBWA `SparkBWA-0.2.jar`, a jar file to launch with Spark.
+
 **Note**  
 Detailed instructions on SparkBWA is <a href=https://github.com/citiususc/SparkBWA>Here</a>. 
 
