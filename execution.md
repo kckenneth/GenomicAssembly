@@ -22,7 +22,7 @@ Rename the spark environment file
 
 If you want to make less verbose in `spark-submit`, <a href=https://github.com/kckenneth/Cassandra/blob/master/streaming_tweet.md>Here</a> is how to do it. 
 
-### Valide the alignment (15 minutes)
+### Valide the alignment (45 minutes)
 
 Make sure that BWA Spark is correctly installed and that the command below runs to the end. If you are successful, you will see a file called FullOutput.sam (4.67 GB) created in the /user/hadoop/OUTPUT_DIR directory of your HDFS. Set the num-executors to the number of nodes in your cluster. Set executor-cores to the number of cores in each VM in your cluster -- and if you see out of memory errors, go down. The --index parameter should contain the base name of your reference genome files. Make sure the path to the SparkBWA jar file is correct in the line below.
 
