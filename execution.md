@@ -53,6 +53,21 @@ Once it's done, the message will end with
 18/11/13 15:44:15 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-e1e5a3d3-b39e-4f4f-8070-64175cb2916a
 ```
 
+### Check the output file in HDFS
+
+You can do one of the following commands, they will give you the list of the HDFS directory. Basically, in any directory in HDFS you want to browse, it do the same thing in your local filesystem. Just prefix with `hadoop fs` or `hdfs dfs` and all the regular bash commands prefixed with `-`. For eg, listing becomes `-ls`. 
+```
+# hadoop fs -ls /
+# hdfs dfs -ls /
+
+drwxr-xr-x   - root supergroup          0 2018-11-13 15:34 /Data
+-rw-r--r--   3 root supergroup 1804779901 2018-11-12 14:28 /ERR000589_1.filt.fastq
+-rw-r--r--   3 root supergroup 1804779901 2018-11-12 14:40 /ERR000589_2.filt.fastq
+drwxr-xr-x   - root supergroup          0 2018-11-13 15:32 /user
+```
+
+
+
 ### To move the output from HDFS to local filesystem
 ```
 # hdfs dfs -copyToLocal Output_ERR000589/* ./
