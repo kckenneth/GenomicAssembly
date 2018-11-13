@@ -123,9 +123,9 @@ drwxrwxrwx. 2 root root 4.0K Nov 11 14:54 .
 -rw-r--r--. 1 root root 2.1M Nov 11 14:54 1000G_phase1.snps.high_confidence.hg38.vcf.gz.tbi
 ```
 
-## Index the reference human genome (2 hours)
+## Index the reference human genome (20 hours)
 
-We need to index the human genome. Note that the command below will take 1-2 hours.  
+We need to index the human genome. Note that the command below will take at least 20 hours.  
 
 if on ubuntu
 ```
@@ -145,7 +145,16 @@ if on centos
 [BWTIncConstructFromPacked] 30 iterations done. 299999994 characters processed.
 ...
 ...
-...
+[BWTIncConstructFromPacked] 700 iterations done. 6411146922 characters processed.
+[BWTIncConstructFromPacked] 710 iterations done. 6432978554 characters processed.
+[bwa_index] 4548.35 seconds elapse.
+[bwa_index] Update BWT... 29.53 sec
+[bwa_index] Pack forward-only FASTA... 45.82 sec
+[bwa_index] Construct SA from BWT and Occ... 1743.34 sec
+[bwt_gen] Finished constructing BWT in 711 iterations.
+[main] Version: 0.7.12-r1039
+[main] CMD: bwa index Homo_sapiens_assembly38.fasta.gz
+[main] Real time: 66676.184 sec; CPU: 6429.017 sec
 ```
 ----------
 # Distribute all files to other nodes
