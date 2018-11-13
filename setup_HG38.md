@@ -159,7 +159,7 @@ if on centos
 [main] Real time: 66676.184 sec; CPU: 6429.017 sec
 ```
 ----------
-# Distribute all files to other nodes
+# Distribute all files to other nodes (2 hours)
 If you're not in other nodes, from the `spark1`, ssh into all other nodes, make a directory `/Data`. 
 ```
 # ssh spark2 mkdir -m 777 /Data
