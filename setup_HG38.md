@@ -162,12 +162,19 @@ If you're not in other nodes, from the `spark1`, ssh into all other nodes, make 
 ```
 # ssh spark2 mkdir -m 777 /Data
 # ssh spark3 mkdir -m 777 /Data
-# ssh spark4 mkdir -m 777 /Data
-# ssh spark5 mkdir -m 777 /Data
+...
+...
+# ssh spark9 mkdir -m 777 /Data
+# ssh spark10 mkdir -m 777 /Data
+```
+Now distribute `HumanBase` and all its files to other nodes.
+```
 # rsync -av /Data/HumanBase spark2:/Data/
 # rsync -av /Data/HumanBase spark3:/Data/
-# rsync -av /Data/HumanBase spark4:/Data/
-# rsync -av /Data/HumanBase spark5:/Data/
+...
+...
+# rsync -av /Data/HumanBase spark9:/Data/
+# rsync -av /Data/HumanBase spark10:/Data/
 ```
 ----------------
 # Validation by Alignment
