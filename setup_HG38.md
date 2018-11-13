@@ -169,7 +169,7 @@ If you're not in other nodes, from the `spark1`, ssh into all other nodes, make 
 # ssh spark9 mkdir -m 777 /Data
 # ssh spark10 mkdir -m 777 /Data
 ```
-Now distribute `HumanBase` and all its files to other nodes. As it takes half an hour for transfer between each node, once I'm done with the first transfer from spark1 to spark2, I do transfer from spark1 to spark3 and spark2 to spark4 to efficiently utilize the time. You'll get the idea. 
+Now distribute `HumanBase` and all its files to other nodes. As it takes half an hour for transfer between each node, once I'm done with the first transfer from spark1 to spark2, I do transfer from spark1 to spark3 and spark2 to spark4 to efficiently utilize the time. You'll get the idea. **Don't** do slash after `Humanbase`. Just `/Data/Humanbase`. 
 ```
 # rsync -av /Data/HumanBase spark2:/Data/
 # rsync -av /Data/HumanBase spark3:/Data/
