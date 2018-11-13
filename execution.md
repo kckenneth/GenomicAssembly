@@ -65,8 +65,11 @@ drwxr-xr-x   - root supergroup          0 2018-11-13 15:34 /Data
 -rw-r--r--   3 root supergroup 1804779901 2018-11-12 14:40 /ERR000589_2.filt.fastq
 drwxr-xr-x   - root supergroup          0 2018-11-13 15:32 /user
 ```
-
-
+**Note**  
+You can also create a directory in HDFS. 
+```
+# hdfs dfs -mkdir /Books
+```
 
 ### To move the output from HDFS to local filesystem
 ```
