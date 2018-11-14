@@ -1,7 +1,7 @@
 # HDFS Setup (All nodes)
 
 <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_spark.md><< 1. Spark setup</a>  
-**2. Hadoop setup**    
+**== 2. Hadoop setup**    
 <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_HG38.md>>> 3. Human Genome in HDFS</a>    
 <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/execution.md>>> 4. Alignment</a>  
 
