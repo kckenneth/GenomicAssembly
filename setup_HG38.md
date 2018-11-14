@@ -2,7 +2,7 @@
 
 <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_spark.md><< 1. Spark setup</a>  
 <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_hadoop.md><< 2. Hadoop setup</a>  
-<a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_HG38.md><< 3. Human Genome in HDFS</a>  
+3. Human Genome in HDFS
 <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/execution.md>4. Alignment >></a>  
 
 We will first download the BWA aligner, which will align files against our reference human genome `hg38` which is the 38 version of the human genome assembly. The downloaded files will be inserted into our HDFS. 
