@@ -47,8 +47,7 @@ Make sure that BWA Spark is correctly installed and that the command below runs 
 # $SPARK_HOME/bin/spark-submit --class com.github.sparkbwa.SparkBWA --master yarn --driver-memory 1500m --executor-memory 15g --executor-cores 4 --verbose --num-executors 10 /root/SparkBWA/target/SparkBWA-0.2.jar -m -r -p --index /Data/HumanBase/Homo_sapiens_assembly38.fasta.gz -n 32 -w "-R @RG\tID:foo\tLB:bar\tPL:illumina\tPU:illumina\tSM:ERR000589" /ERR000589_1.filt.fastq /ERR000589_2.filt.fastq /Data/HumanBase/
 ```
 
-$SPARK_HOME/bin/spark-submit --class com.github.sparkbwa.SparkBWA --master yarn-cluster --driver-memory 1500m --executor-memory 15g --executor-cores 4 --verbose --num-executors 10 /root/SparkBWA/target/SparkBWA-0.2.jar -m -r -p --index /Data/HumanBase/Homo_sapiens_assembly38.fasta.gz -n 32 -w "-R @RG\tID:foo\tLB:bar\tPL:illumina\tPU:illumina\tSM:ERR000589" ERR000589_1.filt.fastq ERR000589_2.filt.fastq Output_ERR000589
-
+There would be a bunch of logs showing up. One of the log I copied and pasted here. 
 
 ```
 	 client token: N/A
@@ -61,7 +60,8 @@ $SPARK_HOME/bin/spark-submit --class com.github.sparkbwa.SparkBWA --master yarn-
 	 tracking URL: http://spark1:8088/proxy/application_1542062922100_21595/
 	 user: root
 ```
-There would be a bunch of logs showing up. One of the log I copied and pasted here. You can go to the following link in your browser to check the status of your job. 
+You can go to the following link in your browser to check the status of your job. 
+
 ```
 http://50.23.42.89:8088/proxy/application_1542062922100_21595/
 ```
