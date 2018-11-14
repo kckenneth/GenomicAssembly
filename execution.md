@@ -33,6 +33,8 @@ When you run spark job on yarn, there are two modes you can use: cluster and cli
 
 Client mode is well suited for interactive jobs, but applications will fail if the client stops. For long running jobs, cluster mode is more appropriate.
 
+For interactive mode, you go and use `spark-shell` by commands `$SPARK_HOME/bin/spark-shell`. Go <a href=https://github.com/kckenneth/Spark/blob/master/setup_spark.md>how to use spark-shell</a>. 
+
 ### Making less verbose in spark-submit [Optional]
 
 If you want to make less verbose in `spark-submit`, <a href=https://github.com/kckenneth/Cassandra/blob/master/streaming_tweet.md>Here</a> is how to do it. 
