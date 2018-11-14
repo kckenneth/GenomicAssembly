@@ -79,7 +79,7 @@ Once it's done, the message will end with
 
 ### Check the output file in HDFS
 
-You can do one of the following commands, they will give you the list of the HDFS directory. Basically, in any directory in HDFS you want to browse, it do the same thing in your local filesystem. Just prefix with `hadoop fs` or `hdfs dfs` and all the regular bash commands prefixed with `-`. For eg, listing becomes `-ls`. 
+You can do one of the following commands, they will give you the list of the HDFS directory. Basically, in any directory in HDFS you want to browse, do the same thing as you would in your local filesystem. Just prefix with `hadoop fs` or `hdfs dfs` and all the regular bash commands prefixed with `-`. For eg, listing becomes `-ls`. 
 ```
 # hadoop fs -ls /
 # hdfs dfs -ls /
