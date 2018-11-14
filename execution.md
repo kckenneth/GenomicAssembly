@@ -38,12 +38,12 @@ Make sure that BWA Spark is correctly installed and that the command below runs 
 	 queue: default
 	 start time: 1542144791497
 	 final status: UNDEFINED
-	 tracking URL: http://spark1:8088/proxy/application_1542062922100_20899/
+	 tracking URL: http://spark1:8088/proxy/application_1542062922100_21595/
 	 user: root
 ```
 There would be a bunch of logs showing up. One of the log I copied and pasted here. You can go to the following link in your browser to check the status of your job. 
 ```
-http://50.23.42.89:8088/proxy/application_1542062922100_20899/
+http://50.23.42.89:8088/proxy/application_1542062922100_21595/
 ```
 
 <p align="center">
