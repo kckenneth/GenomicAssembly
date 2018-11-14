@@ -1,6 +1,9 @@
 # HDFS Setup (All nodes)
 
-<a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_spark.md><< Spark setup</a>  
+<a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_spark.md><< 1. Spark setup</a>  
+**2. Hadoop setup**    
+<a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_HG38.md>>> 3. Human Genome in HDFS</a>    
+<a href=https://github.com/kckenneth/GenomicAssembly/blob/master/execution.md>>> 4. Alignment</a>  
 
 If you come across any issues in setting up hdfs and yarn, go <a href=http://www.cs.brandeis.edu//~cs147a/lab/hadoop-troubleshooting/>Here</a>. For Wiki on Hadoop, go <a href=https://wiki.apache.org/hadoop/GettingStartedWithHadoop>Here</a>. Until then, Let's get started!
 
