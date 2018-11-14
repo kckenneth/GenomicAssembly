@@ -7,6 +7,10 @@
 # Genomic Assembly
 
 <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/README.md><< Introduction</a>
+**== 1. Spark setup**    
+<a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_hadoop.md>>> 2. Hadoop setup</a>      
+<a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_HG38.md>>> 3. Human Genome in HDFS</a>    
+<a href=https://github.com/kckenneth/GenomicAssembly/blob/master/execution.md>>> 4. Alignment</a>  
 
 ## 10 Nodes privision 
 
