@@ -1,7 +1,9 @@
 # Validation [Running alignment]
 
-<a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_HG38.md><< Human Genome setup</a>  
-
+1. <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_spark.md><< Spark setup</a>
+2. <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_hadoop.md><< Hadoop setup</a>
+3. <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_HG38.md><< Human Genome in HDFS</a>
+	
 ### Setting the Yarn in Spark environment
 Before we validate our alignment, we need to first understand the spark and yarn. Basically, Spark is a built-in RDD we installed. On top of the spark local file system, we installed Hadoop distributed file system (HDFS). Now we're going to submit our job from spark using `spark-submit` using `YARN` (Yet Another Resource Navigator or Negotiator). Yarn is a resource manager for HDFS, not for spark. So we're crossing the two systems here. Spark must know where is the resource manager `Yarn` for HDFS, which is basically a configuration file. So we need to set the hadoop configuration path in spark environment. 
 
