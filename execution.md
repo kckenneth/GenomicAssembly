@@ -20,7 +20,15 @@ Rename the spark environment file
 
 **Note**  
 
-I've seen others use `spark-defaults.conf` and change the `spark.master` to `yarn` replacing the `spark://master:7077`. More <a href=https://www.linode.com/docs/databases/hadoop/install-configure-run-spark-on-top-of-hadoop-yarn-cluster/>details</a>.
+If you don't set up the spark environment, it will throw an error when you submit `spark-submit` job. I've also seen others use `spark-defaults.conf` and change the `spark.master` to `yarn` replacing the `spark://master:7077`. More <a href=https://www.linode.com/docs/databases/hadoop/install-configure-run-spark-on-top-of-hadoop-yarn-cluster/>details</a>.
+
+When you run spark job on yarn, there are two modes you can use: cluster and client modes. Understanding the difference between the two modes is important for choosing an appropriate memory allocation configuration, and to submit jobs as expected. A Spark job consists of two parts: _Spark Executors_ that run the actual tasks, and a _Spark Driver_ that schedules the Executors.
+
+- Cluster mode: everything runs inside the cluster. You can start a job from your laptop and the job will continue running even if you close your computer. In this mode, the Spark Driver is encapsulated inside the YARN Application Master. 
+
+- Client mode the Spark driver runs on a client, such as your laptop. If the client is shut down, the job fails. Spark Executors still run on the cluster, and to schedule everything, a small YARN Application Master is created.
+
+Client mode is well suited for interactive jobs, but applications will fail if the client stops. For long running jobs, cluster mode is more appropriate.
 
 ### Making less verbose in spark-submit [Optional]
 
