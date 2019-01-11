@@ -81,7 +81,7 @@ You need to install `ftp` to connect to remote ftp server.
 ```
 # yum install ftp
 ```
-We're downloading the reference hg38 from boradinstitute which setup ftp server. So we're connecting and downloading hg38 files over ftp. When asked password, just hit `Enter`. No need to have a password. We're still working in master node, spark1.  
+We're downloading the reference hg38 from broad institute which has the ftp server. So we're connecting and downloading hg38 files over the ftp. When asked password, just hit `Enter`. No need to have a password. We're still working in master node, spark1.  
 For more reference, <a href=https://software.broadinstitute.org/gatk/download/bundle>Broad Institute</a>.
 ```
 mkdir -pm 777 /Data/HumanBase
