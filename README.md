@@ -9,3 +9,9 @@ In this project, we will setup 10 spark nodes with 4CPU, 32GB RAM, 100GB disk in
 2. <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_hadoop.md>Hadoop setup</a>
 3. <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/setup_HG38.md>Human Genome in HDFS</a>
 4. <a href=https://github.com/kckenneth/GenomicAssembly/blob/master/execution.md>Alignment Validation<a>
+
+### TODO
+- [x] Spark setup
+- [x] Hadoop Setup
+- [x] Human Genome in HDFS
+- [x] Alignment validation
