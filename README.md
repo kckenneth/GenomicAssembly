@@ -1,7 +1,7 @@
 # Genomic Assembly
 
 **Date**: 2018 November 11  
-**Author**: Kenneth Chen
+**Author**: Kenneth
 
 In this project, we will setup 10 spark nodes with 4CPU, 32GB RAM, 100GB disk in CentOS. On top of Spark, we will setup HDFS across all nodes. Once HDFS is ready, download human reference genome `hg38` and distribute across all nodes. We will finally validate the genome with some files downloaded by alignment using sparkBWA. Follow the steps shown below. 
 
